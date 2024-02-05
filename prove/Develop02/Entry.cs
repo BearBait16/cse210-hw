@@ -25,11 +25,6 @@ public class Entry
         };
         return newEntry;
     }
-    void Display()
-    {
-        Console.WriteLine($"");
-    }
-
     // Who was the most interesting person I interacted with today?
     // What was the best part of my day?
     // How did I see the hand of the Lord in my life today?

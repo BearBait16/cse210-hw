@@ -45,12 +45,12 @@ class Program
                 }
                 else if (choice == "5")
                 {
-                    System.Console.WriteLine("Thank You!");
+                    Console.WriteLine("Thank You!");
                     _quit = true;
                 }
                 else
                 {
-                    System.Console.WriteLine("Unrecognized, please try again.");
+                    Console.WriteLine("Unrecognized, please try again.");
                 }
             }
 
