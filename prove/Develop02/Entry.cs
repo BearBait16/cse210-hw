@@ -6,23 +6,28 @@ using System.Diagnostics.Contracts;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.VisualBasic;
 
-class Entry
+public class Entry
 {
     public string _response;
     public string _prompt;
     public string _date;
     public List<string> _prompts = new List<string>();
 
-
-    public string MakeEntry()
+    public Entry MakeEntry()
     {
         Console.WriteLine(GeneratePrompt());
-        string _response = Console.ReadLine();
-        return _response;
+        string newresponse = Console.ReadLine();
+        Entry newEntry = new Entry
+        {
+            _date = DateTime.Now.ToString(),
+            _prompt = GeneratePrompt(),
+            _response = newresponse
+        };
+        return newEntry;
     }
     void Display()
     {
-        System.Console.WriteLine();
+        Console.WriteLine($"");
     }
 
     // Who was the most interesting person I interacted with today?
@@ -32,6 +37,7 @@ class Entry
     // If I had one thing I could do over today, what would it be?
     public string GeneratePrompt()
     {
+        Console.Clear();
         _prompts.Add("Who was the most interesting person I interacted with today?");
         _prompts.Add("What was the best part of my day?");
         _prompts.Add("How did I see the hand of the Lord in my life today?");

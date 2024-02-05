@@ -10,23 +10,25 @@ class Program
     {
         Journal journal = new Journal();
         Entry entry = new Entry();
-
+        Menu();
         void Menu()
         {
             System.Console.WriteLine("Welcome to the Journal writng shindig!");
-            System.Console.WriteLine("What would you like to do?");
-            System.Console.WriteLine("1: Write a new entry");
-            System.Console.WriteLine("2: Display the journal");
-            System.Console.WriteLine("3: Save the journal to a file");
-            System.Console.WriteLine("4: Load the journal from a file");
-            System.Console.WriteLine("5: Quit");
-            string choice = Console.ReadLine();
             bool _quit = false;
             while (_quit == false)
             {
+                // Console.Clear();
+                Console.WriteLine("What would you like to do?");
+                Console.WriteLine("1: Write a new entry");
+                Console.WriteLine("2: Display the journal");
+                Console.WriteLine("3: Save the journal to a file");
+                Console.WriteLine("4: Load the journal from a file");
+                Console.WriteLine("5: Quit");
+                string choice = Console.ReadLine();
+
                 if (choice == "1")
                 {
-                    string _currentEntry = entry.MakeEntry();
+                    Entry _currentEntry = entry.MakeEntry();
                     journal._entries.Add(_currentEntry);
                 }
                 else if (choice == "2")
