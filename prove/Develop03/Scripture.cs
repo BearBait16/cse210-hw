@@ -1,11 +1,17 @@
+using System.Net.NetworkInformation;
+
 class Scripture
 {
     private string verse1;
     private string verse2;
 
-    void DisplayScripture()
+    static public void DisplayScripture(List<Word> words)
     {
-        Console.WriteLine();
+        foreach (Word word in words)
+        {
+            string Text = word.GetText(word);
+            System.Console.WriteLine(Text);
+        }
     }
 
 

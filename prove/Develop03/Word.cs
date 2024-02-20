@@ -6,6 +6,10 @@ class Word
     string text;
     bool hidden;
     int lengthOfWord;
+    public string GetText(Word word)
+    {
+        return word.text;
+    }
     Word(int length, string Oldtext)
     {
 
@@ -24,11 +28,18 @@ class Word
         }
         return wordList;
     }
-
+    // Takes a given words length, then converts the 
+    static public Word Hide(Word thisWord)
+    {
+        int wordLength = thisWord.lengthOfWord;
+        thisWord.text = string.Concat(Enumerable.Repeat("-", wordLength));
+        thisWord.hidden = true;
+        return thisWord;
+    }
     // Makes a bunch of random indexes, checks 
     // if there are any words within the array that are revealed,
     // and hides the given indexs 
-    static public void RandomlyHide(List<Word> words)
+    static public void RandomlyChoose(List<Word> words)
     {
         Random randomIndex = new Random();
         List<int> chosenIndexList = new List<int>();
@@ -43,7 +54,12 @@ class Word
             {
                 alreadyHiddenList.Add(words.IndexOf(word));
             }
+            // Take the indexes needed, cycle them through the words list, then hide all those words
+            foreach (int index in chosenIndexList)
+            {
+                Word currentWord = words[index];
+                Word.Hide(currentWord);
+            }
         }
-
     }
 }

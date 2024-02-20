@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 
 class Program
@@ -28,8 +29,10 @@ class Program
 
         // concatinates the two verses into one array
         words1.AddRange(words2);
-        // calls the hidden function
-        Word.RandomlyHide(words1);
+        // calls the hidden function for random words
+        Word.RandomlyChoose(words1);
+        // Displays the verse with the hidden words
+        Scripture.DisplayScripture(words1);
         // when finished, quits the program
 
 
