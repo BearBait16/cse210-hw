@@ -58,7 +58,8 @@ class Word
             foreach (int index in chosenIndexList)
             {
                 Word currentWord = words[index];
-                Word.Hide(currentWord);
+                currentWord = Word.Hide(currentWord);
+
             }
         }
     }
