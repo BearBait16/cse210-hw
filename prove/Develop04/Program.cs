@@ -1,9 +1,12 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        // Display Menu
+        // When activity is chosen, it calls whatever activity's run
+        Activity.SpinningLine();
     }
 }
