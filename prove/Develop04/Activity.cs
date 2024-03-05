@@ -2,7 +2,7 @@ public class Activity
 {
     public void DisplayActivityStart()
     {
-
+        System.Console.WriteLine("Welcome to this mindfulness Activity");
     }
 
     public void DisplayActivityEnd()
