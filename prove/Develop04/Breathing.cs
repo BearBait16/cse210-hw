@@ -1,7 +1,11 @@
+using System.Data;
+
 class Breathing : Activity
 {
     public void BreathingStart()
     {
+        Console.Clear();
+
         Console.WriteLine("This activity will help you relax by walking your through breathing in and out slowly.");
         Console.WriteLine("Clear your mind and focus on your breathing.");
 
@@ -16,9 +20,10 @@ class Breathing : Activity
         // runs the timer and the breathing excersize here
         DateTime userGivenTime = DateTime.Now.AddSeconds(timeLimit);
         DateTime currentTime = DateTime.Now;
-        while (currentTime != userGivenTime)
+        while (currentTime < userGivenTime)
         {
             BreathingExcersize();
+            currentTime = DateTime.Now;
         }
         // when the time spent in the excersize is the amount of time input by the user, it finishes the program
 
@@ -27,14 +32,17 @@ class Breathing : Activity
 
     void BreathingExcersize()
     {
+        Console.Clear();
+
         var breathIn = 4;
 
-        var breathOut = 8;
+        var breathOut = 6;
 
         while (breathIn > 0)
         {
             Console.WriteLine("Breath in..." + breathIn);
             Thread.Sleep(1000);
+            Console.Clear();
             breathIn -= 1;
         }
 
@@ -42,6 +50,7 @@ class Breathing : Activity
         {
             Console.WriteLine("Breath out..." + breathOut);
             Thread.Sleep(1000);
+            Console.Clear();
             breathOut -= 1;
         }
     }
