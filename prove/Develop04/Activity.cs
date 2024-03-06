@@ -7,7 +7,7 @@ public class Activity
 
     public void DisplayActivityEnd()
     {
-
+        System.Console.WriteLine("You've completed a mindfulness Activity! Good Job!");
     }
 
     static public void SpinningLine()

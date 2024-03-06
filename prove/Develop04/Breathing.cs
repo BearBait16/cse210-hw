@@ -5,6 +5,8 @@ class Breathing : Activity
     public void BreathingStart()
     {
         Console.Clear();
+        DisplayActivityStart();
+        SpinningLine();
 
         Console.WriteLine("This activity will help you relax by walking your through breathing in and out slowly.");
         Console.WriteLine("Clear your mind and focus on your breathing.");
@@ -26,13 +28,14 @@ class Breathing : Activity
             currentTime = DateTime.Now;
         }
         // when the time spent in the excersize is the amount of time input by the user, it finishes the program
-
+        DisplayActivityEnd();
+        SpinningLine();
         // exits the function when the amount of excersizes is finished
     }
 
     void BreathingExcersize()
     {
-        Console.Clear();
+
 
         var breathIn = 4;
 

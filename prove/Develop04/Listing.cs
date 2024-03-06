@@ -4,6 +4,7 @@ class Listing : Activity
 
     public void ListingStart()
     {
+        DisplayActivityStart();
         // displays the start activity code with the correct parameters
 
         Console.WriteLine("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
@@ -47,5 +48,7 @@ class Listing : Activity
         // if the time passed is equal to or greater then the time given, then end the activity
 
         // end message
+        DisplayActivityEnd();
+        SpinningLine();
     }
 }
