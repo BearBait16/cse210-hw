@@ -1,0 +1,4 @@
+class EternalGoals : Goals
+{
+
+}
