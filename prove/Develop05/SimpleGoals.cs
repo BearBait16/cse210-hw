@@ -1,4 +1,4 @@
-class SimpleGoals : Goals
-{
+// class SimpleGoals : Goals
+// {
 
-}
+// }

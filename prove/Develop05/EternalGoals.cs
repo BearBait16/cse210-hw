@@ -1,4 +1,7 @@
 class EternalGoals : Goals
 {
+    EternalGoals()
+    {
 
+    }
 }
