@@ -5,14 +5,8 @@ abstract class Goals
     protected string goalText;
     protected int goalPoints;
 
-    public Goals CreateGoal()
+    public void CreateGoal()
     {
-        System.Console.WriteLine("What type of goal would you like to set?");
-        System.Console.WriteLine("  1. Simple Goal");
-        System.Console.WriteLine("  2. Eternal Goal");
-        System.Console.WriteLine("  3. Checklist Goal");
-        string goalType = Console.ReadLine();
-
         System.Console.WriteLine("How many points is your goal worth? ");
         string goalPointStr = Console.ReadLine();
         goalPoints = int.Parse(goalPointStr);
@@ -23,9 +17,8 @@ abstract class Goals
         System.Console.WriteLine("What is the goal that you are setting? ");
         goalText = Console.ReadLine();
 
-
     }
-    public void DisplayGoal()
+    public virtual void DisplayGoal()
     {
         System.Console.WriteLine($"Name: {goalName} Goal: {goalText} Number of Points: {goalPoints}");
     }
@@ -35,12 +28,13 @@ abstract class Goals
         points.SetValue(goalPoints);
     }
 
-    Goals(string goalName, string goalText, int goalPoints)
+    protected Goals(string goalName, string goalText, int goalPoints)
     {
         this.goalName = goalName;
         this.goalText = goalText;
         this.goalPoints = goalPoints;
     }
+
 
 
 }
